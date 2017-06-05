@@ -9,6 +9,7 @@ function handleSubmit(ev) {
     const name = f.personName.value
     const age = f.personAge.value
     const school = f.personSchool.value
+    const color = f.personColor.valuu
 
     if (age < 0) {
         document.querySelector('p#welcome').innerHTML = 'You cannot enter a negative age, unless of course you are an unborn demon'
@@ -22,6 +23,7 @@ function handleSubmit(ev) {
         document.querySelector('h1').innerHTML = 'People Factory - ' + name
         document.querySelector('p#valid').style.color = 'black'
         document.body.style.backgroundColor = 'lightblue'
+        document.body.style.backgroundColor = color
     }
 }
 
