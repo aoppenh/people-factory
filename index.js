@@ -12,7 +12,7 @@ function handleSubmit(ev) {
         document.querySelector('p#welcome').innerHTML = 'You cannot enter a negative age, unless of course you are an unborn demon'
         document.querySelector('p#welcome').style.color = 'crimson'
     } else {
-        document.querySelector('p#welcome').innerHTML = 'Welcome' + ' - ' + name + ' ' + '\n You are ' + age + ' years old.'
+        document.querySelector('p#welcome').innerHTML = 'Welcome' + ' - ' + 'You are ' + age + ' years old.'
         document.querySelector('p#welcome').style.color = 'black'
     }
 
