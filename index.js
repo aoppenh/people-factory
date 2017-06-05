@@ -8,11 +8,14 @@ function handleSubmit(ev) {
     const age = f.personAge.value
     if (age < 0) {
         document.querySelector('p#welcome').innerHTML = 'You cannot enter a negative age, unless of course you are an unborn demon'
-        document.body.style.backgroundColor = 'crimson'
+        document.querySelector('p#welcome').style.color = 'crimson'
     } else {
-        document.querySelector('p#welcome').innerHTML = 'Welcome' + '-' + name + ' ' + '\n You are ' + age + ' years old.'
-        document.body.style.backgroundColor = 'white'
+        document.querySelector('p#welcome').innerHTML = 'Welcome' + ' - ' + name + ' ' + '\n You are ' + age + ' years old.'
+        document.querySelector('p#welcome').style.color = 'black'
     }
+    document.querySelector('h1').innerHTML = 'People Factory - ' + name
+    document.querySelector('h1').style.color = 'darkgoldenrod'
+    document.body.style.backgroundColor = 'lightblue'
 }
 
 personName.addEventListener('submit', handleSubmit)
