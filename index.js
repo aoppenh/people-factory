@@ -1,6 +1,5 @@
-const personName = document.querySelector('#personForm')
-const personAge = document.querySelector('#personForm')
-const personSchool = document.querySelector('#personForm')
+const personInfo = document.querySelector('#personForm')
+const resetButton = document.querySelector('#resetForm')
 
 function handleSubmit(ev) {
     ev.preventDefault()
@@ -26,6 +25,18 @@ function handleSubmit(ev) {
     }
 }
 
-personName.addEventListener('submit', handleSubmit)
-personAge.addEventListener('submit', handleSubmit)
-personSchool.addEventListener('submit', handleSubmit)
+function handleReset(ev) {
+    ev.preventDefault()
+
+    document.querySelector('#personForm').reset()
+    document.querySelector('#resetForm').reset()
+
+    document.body.style.backgroundColor = 'white'
+    document.querySelector('p#welcome').style.color = 'black'
+    document.querySelector('p#welcome').innerHTML ='Welcome!'
+    document.querySelector('p#valid').style.color = 'black'
+    document.querySelector('h1').innerHTML = 'A Factory of People'
+}
+
+personInfo.addEventListener('submit', handleSubmit)
+resetButton.addEventListener('reset', handleReset)
