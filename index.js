@@ -1,4 +1,5 @@
-const personForm = document.querySelector('#personF')
+const personName = document.querySelector('#personForm')
+const personAge = document.querySelector('#personForm')
 
 function handleSubmit(ev) {
     ev.preventDefault()
@@ -7,4 +8,5 @@ function handleSubmit(ev) {
     document.querySelector('h1').textContent = name
 }
 
-personForm.addEventListener('submit', handleSubmit)
+personName.addEventListener('submit', handleSubmit)
+personAge.addEventListener('submit', handleSubmit)
