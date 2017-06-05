@@ -14,11 +14,11 @@ function handleSubmit(ev) {
     if (age < 0) {
         document.querySelector('p#welcome').innerHTML = 'You cannot enter a negative age, unless of course you are an unborn demon'
         document.querySelector('p#welcome').style.fontSize = 'xx-large'
-        document.body.style.backgroundColor = 'darkgrey'
         document.querySelector('p#valid').style.color = 'crimson'
         document.querySelector('p#welcome').style.color = 'crimson'
     } else {
         document.querySelector('p#welcome').innerHTML = 'Welcome' + ' - ' + 'You are ' + age + ' years old and you attend ' + school
+        document.querySelector('p#welcome').style.fontSize = 'xx-large'
         document.querySelector('p#welcome').style.color = 'black'
         document.querySelector('h1').innerHTML = 'People Factory - ' + name
         document.querySelector('p#valid').style.color = 'black'
