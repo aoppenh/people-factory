@@ -13,6 +13,8 @@ function handleSubmit(ev) {
     const school = f.personSchool.value
     const color = f.personColor.value
 
+    document.querySelector('#details').querySelector('p').innerHTML = name
+
     if (age < 0) {
         document.querySelector('p#welcome').innerHTML = 'You cannot enter a negative age!!!!!!!!'
         document.querySelector('p#welcome').style.fontSize = 'xx-large'
@@ -33,6 +35,8 @@ function handleReset(ev) {
 
     document.querySelector('#personForm').reset()
     document.querySelector('#resetForm').reset()
+
+    document.querySelector('#details').querySelector('p').innerHTML = ''
 
     document.body.style.backgroundColor = 'white'
     document.querySelector('p#welcome').style.color = 'black'
