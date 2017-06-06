@@ -55,37 +55,8 @@ function handleReset(ev) {
 }
 
 function detailList(name, age, school, color, number) {
-    // document.querySelector('#details').querySelector('ul').innerHTML = `
-    //     <ul>
-    //         <p>Details:</p>
-    //         <li>Name: ${name}</li>
-    //         <li>Age: ${age}</li>
-    //         <li>School: ${school}</li>
-    //         <li>Color: ${color}</li>
-    //         <li>Color: ${colorDiv}</li>
-    //         <li>Number: ${number}</li>
-    //     </ul>
-    //  `
-
     const details = document.querySelector('#details')
     const text = document.createElement('text')
-
-    // document.querySelector('#details').innerHTML = 'Details:'
-
-    // text.innerHTML = `Details:`
-    // details.appendChild(text)
-
-    // text.innerHTML = `
-    //     <ul>
-    //         <li>Name: ${name}</li>
-    //         <li>Age: ${age}</li>
-    //         <li>School: ${school}</li>
-    //         <li>Color: ${color}</li>
-    //         <li>Color: ${colorDiv}</li>
-    //         <li>Number: ${number}</li>
-    //     </ul>
-    // `
-    // details.appendChild(text)
 
     const p = document.createElement('p')
     p.textContent = 'Details:'
