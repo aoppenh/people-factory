@@ -18,7 +18,18 @@ function handleSubmit(ev) {
     //     <div style="background-color: ${color}; width: 100px; height: 50px;"></div>
     // `
 
-    detailList(name, age, school, color, number)
+    const details = document.querySelector('#details')
+
+    const person = {
+        name: name,
+        age: age,
+        school: school,
+        number: number,
+        color: color,
+        colorDiv: renderColor(color).outerHTML,
+    }
+
+    details.appendChild(renderList(person))
 
     if (age < 0) {
         document.querySelector('p#welcome').innerHTML = 'You cannot enter a negative age!!!!!!!!'
@@ -54,48 +65,27 @@ function handleReset(ev) {
     document.querySelector('h1').innerHTML = 'A Factory of People'
 }
 
-function detailList(name, age, school, color, number) {
-    const details = document.querySelector('#details')
-    const text = document.createElement('text')
+function renderList(personData) {
+    const list = document.createElement('ul')
+    Object.keys(personData).map(function(fieldName) {
+        const li = renderListData(fieldName, personData[fieldName])
+        list.appendChild(li)
+    })
+    return list
+}
 
-    const p = document.createElement('p')
-    p.textContent = 'Details:'
+function renderColor(color) {
+    const colorDiv = document.createElement('div')
+    colorDiv.style.backgroundColor = color
+    colorDiv.style.width = '100px'
+    colorDiv.style.height = '50px'
+    return colorDiv
+}
 
-    const ul = document.createElement('ul')
-
-    const liName = document.createElement('li')
-    liName.textContent = name
-
-    const liAge = document.createElement('li')
-    liAge.textContent = age
-
-    const liSchool = document.createElement('li')
-    liSchool.textContent = school
-
-    const liNumber = document.createElement('li')
-    liNumber.textContent = number
-
-    const liColor = document.createElement('li')
-    liColor.textContent = color
-
-    const liColorDiv = document.createElement('li')
-    const div = document.createElement('div')
-    div.style.backgroundColor = color
-    div.style.width = '100px'
-    div.style.height = '50px'
-
-    liColorDiv.appendChild(div)
-
-    ul.appendChild(liName)
-    ul.appendChild(liAge)
-    ul.appendChild(liSchool)
-    ul.appendChild(liNumber)
-    ul.appendChild(liColor)
-    ul.appendChild(liColorDiv)
-
-    p.appendChild(ul)
-
-    details.appendChild(p)
+function renderListData(fieldName, value) {
+    const li = document.createElement('li')
+    li.innerHTML = `${fieldName}: ${value}`
+    return li
 }
 
 personInfo.addEventListener('submit', handleSubmit)
