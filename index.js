@@ -56,7 +56,7 @@ function handleReset(ev) {
     document.querySelector('#personForm').reset()
     document.querySelector('#resetForm').reset()
 
-    document.querySelector('#details').querySelector('p').innerHTML = ''
+    document.querySelector('#detailsForm').reset()
 
     document.body.style.backgroundColor = 'white'
     document.querySelector('p#welcome').style.color = 'black'
