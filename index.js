@@ -4,6 +4,7 @@ const resetButton = document.querySelector('#resetForm')
 document.querySelector('p#welcome').innerHTML ='Welcome!'
 document.querySelector('p#welcome').style.fontSize = 'xx-large'
 
+
 function handleSubmit(ev) {
     ev.preventDefault()
 
@@ -12,8 +13,17 @@ function handleSubmit(ev) {
     const age = f.personAge.value
     const school = f.personSchool.value
     const color = f.personColor.value
+    const number = f.personNumber.value
 
-    document.querySelector('#details').querySelector('p').innerHTML = `<em>${name}</em>`
+    document.querySelector('#details').querySelector('p').innerHTML = `\
+        <ul>
+            <li>Name: ${name}</li>
+            <li>Age: ${age}</li>
+            <li>School: ${school}</li>
+            <li>Color: ${color}</li>
+            <li>Number: ${number}</li>
+        </ul>
+    `
 
     if (age < 0) {
         document.querySelector('p#welcome').innerHTML = 'You cannot enter a negative age!!!!!!!!'
@@ -21,10 +31,10 @@ function handleSubmit(ev) {
         document.querySelector('p#valid').style.color = 'crimson'
         document.querySelector('p#welcome').style.color = 'crimson'
     } else {
-        document.querySelector('p#welcome').innerHTML = 'Welcome' + ' - ' + 'You are ' + age + ' years old and you attend ' + school
+        document.querySelector('p#welcome').innerHTML = 'Welcome' + ' : ' + 'You are ' + age + ' years old and you attend ' + school
         document.querySelector('p#welcome').style.fontSize = 'xx-large'
         document.querySelector('p#welcome').style.color = 'black'
-        document.querySelector('h1').innerHTML = 'People Factory - ' + name
+        document.querySelector('h1').innerHTML = 'People Factory : ' + name + ' - Favorite Number : ' + number
         document.querySelector('p#valid').style.color = 'black'
         document.body.style.backgroundColor = color
     }
