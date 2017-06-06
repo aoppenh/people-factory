@@ -29,7 +29,7 @@ function handleSubmit(ev) {
         document.querySelector('p#welcome').innerHTML = 'Welcome' + ' : ' + 'You are ' + age + ' years old and you attend ' + school
         document.querySelector('p#welcome').style.fontSize = 'xx-large'
         document.querySelector('p#welcome').style.color = 'black'
-        document.querySelector('h1').innerHTML = 'People Factory : ' + name + ' - Age : ' + age
+        document.querySelector('h1').innerHTML = name + ' - Age : ' + age
         document.querySelector('p#valid').style.color = 'black'
         //document.body.style.backgroundColor = color
     }
@@ -72,6 +72,9 @@ function detailList(name, age, school, color, number) {
     const liSchool = document.createElement('li')
     liSchool.textContent = school
 
+    const liNumber = document.createElement('li')
+    liNumber.textContent = number
+
     const liColor = document.createElement('li')
     liColor.textContent = color
 
@@ -81,17 +84,14 @@ function detailList(name, age, school, color, number) {
     div.style.width = '100px'
     div.style.height = '50px'
 
-    const liNumber = document.createElement('li')
-    liNumber.textContent = number
-
     liColorDiv.appendChild(div)
 
     ul.appendChild(liName)
     ul.appendChild(liAge)
     ul.appendChild(liSchool)
+    ul.appendChild(liNumber)
     ul.appendChild(liColor)
     ul.appendChild(liColorDiv)
-    ul.appendChild(liNumber)
 
     p.appendChild(ul)
 
