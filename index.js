@@ -13,7 +13,7 @@ function handleSubmit(ev) {
     const school = f.personSchool.value
     const color = f.personColor.value
 
-    document.querySelector('#details').querySelector('p').innerHTML = name
+    document.querySelector('#details').querySelector('p').innerHTML = `<em>${name}</em>`
 
     if (age < 0) {
         document.querySelector('p#welcome').innerHTML = 'You cannot enter a negative age!!!!!!!!'
