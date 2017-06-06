@@ -4,6 +4,8 @@ const resetButton = document.querySelector('#resetForm')
 document.querySelector('p#welcome').innerHTML ='Welcome!'
 document.querySelector('p#welcome').style.fontSize = 'xx-large'
 
+const details = document.querySelector('#details')
+
 function handleSubmit(ev) {
     ev.preventDefault()
 
@@ -17,8 +19,6 @@ function handleSubmit(ev) {
     // const colorDiv = `
     //     <div style="background-color: ${color}; width: 100px; height: 50px;"></div>
     // `
-
-    const details = document.querySelector('#details')
 
     const person = {
         name: name,
@@ -56,7 +56,7 @@ function handleReset(ev) {
     document.querySelector('#personForm').reset()
     document.querySelector('#resetForm').reset()
 
-    document.querySelector('#detailsForm').reset()
+    //details.reset()
 
     document.body.style.backgroundColor = 'white'
     document.querySelector('p#welcome').style.color = 'black'
