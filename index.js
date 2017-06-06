@@ -1,6 +1,9 @@
 const personInfo = document.querySelector('#personForm')
 const resetButton = document.querySelector('#resetForm')
 
+document.querySelector('p#welcome').innerHTML ='Welcome!'
+document.querySelector('p#welcome').style.fontSize = 'xx-large'
+
 function handleSubmit(ev) {
     ev.preventDefault()
 
