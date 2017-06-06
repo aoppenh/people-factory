@@ -9,34 +9,34 @@
         <title>People Factory</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.3.1/css/foundation.min.css">
+        <link rel="stylesheet" href="index.css">
     </head>
     <body>
         <h1>A Factory of People</h1>
         <p class="special">| Enter Information Below |</p>
-        <p id="valid">| You must enter a valid name and age |</p>
+        <p id="valid">| You must enter a valid age and color|</p>
         <section>
             <div class="special">
                 <form id="personForm">
                     <p>
-                        <label for="" name="name">Name:</label>
+                        <label id="l" for="" name="name">Name:</label>
                         <input type="text" name="personName">
                     </p>
 
                     <p>
-                        <label for="" name="age">Age:</label>
+                        <label id="l" for="" name="age">Age:</label>
                         <input type="text" name="personAge">
                     </p>
 
                     <p>
-                        <label for="" name="school">School:</label>
+                        <label id="l" for="" name="school">School:</label>
                         <input type="text" name="personSchool">
                     </p>
 
                     <p>
-                        <p>| You may enter a color name if you wish |</p>
                         <label for="" name="color">Color:</label>
                         <input type="text" name="personColor">
-                        <p>| Please Note: the color will not be used if your age is invalid |</p>
                     </p>
 
                     <p>

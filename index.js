@@ -28,6 +28,10 @@ function handleSubmit(ev) {
         document.querySelector('p#valid').style.color = 'black'
         document.body.style.backgroundColor = color
     }
+
+    // const em = document.createElement('em')
+    // em.textContent = name
+    // details.appendChild(em)
 }
 
 function handleReset(ev) {
