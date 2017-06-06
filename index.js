@@ -14,7 +14,7 @@ function handleSubmit(ev) {
     const color = f.personColor.value
 
     if (age < 0) {
-        document.querySelector('p#welcome').innerHTML = 'You cannot enter a negative age, unless of course you are an unborn demon'
+        document.querySelector('p#welcome').innerHTML = 'You cannot enter a negative age!!!!!!!!'
         document.querySelector('p#welcome').style.fontSize = 'xx-large'
         document.querySelector('p#valid').style.color = 'crimson'
         document.querySelector('p#welcome').style.color = 'crimson'
