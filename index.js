@@ -6,7 +6,7 @@ const PeopleFactory = {
     resetButton: document.querySelector('#resetForm'),
 
     init: function () {
-        this.personInfo.addEventListener('submit', this.handleSubmit)
+        this.personInfo.addEventListener('submit', this.handleSubmit.bind(this))
         this.resetButton.addEventListener('reset', this.handleReset)
 
         document.querySelector('p#welcome').innerHTML = 'Welcome!'
@@ -27,8 +27,8 @@ const PeopleFactory = {
     },
     renderList: function (personData) {
         const list = document.createElement('ul')
-        Object.keys(personData).map(function (fieldName) {
-            const li = PeopleFactory.renderListData(fieldName, personData[fieldName])
+        Object.keys(personData).map((fieldName) => {
+            const li = this.renderListData(fieldName, personData[fieldName])
             list.appendChild(li)
         })
         return list
@@ -53,10 +53,10 @@ const PeopleFactory = {
             school: school,
             number: number,
             color: color,
-            colorDiv: PeopleFactory.renderColor(color).outerHTML,
+            colorDiv: this.renderColor(color).outerHTML,
         }
 
-        PeopleFactory.details.appendChild(PeopleFactory.renderList(person))
+        PeopleFactory.details.appendChild(this.renderList(person))
 
         if (age < 0) {
             document.querySelector('p#welcome').innerHTML = 'You cannot enter a negative age!!!!!!!!'
@@ -68,7 +68,7 @@ const PeopleFactory = {
             document.querySelector('p#welcome').style.fontSize = 'xx-large'
             document.querySelector('p#welcome').style.color = 'black'
             document.querySelector('h1').innerHTML = name + ' - Age : ' + age
-            document.querySelector('p#valid').style.color = 'black'
+            //document.querySelector('p#valid').style.color = 'black'
             //document.body.style.backgroundColor = color
         }
 
@@ -87,7 +87,7 @@ const PeopleFactory = {
         document.body.style.backgroundColor = 'white'
         document.querySelector('p#welcome').style.color = 'black'
         document.querySelector('p#welcome').innerHTML = 'Welcome!'
-        document.querySelector('p#valid').style.color = 'black'
+        //document.querySelector('p#valid').style.color = 'black'
         document.querySelector('h1').innerHTML = 'A Factory of People'
     },
 }
