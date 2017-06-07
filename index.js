@@ -1,3 +1,4 @@
+
 {
     const personInfo = document.querySelector('#personForm')
     const resetButton = document.querySelector('#resetForm')
