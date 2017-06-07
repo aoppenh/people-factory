@@ -1,14 +1,39 @@
+const PeopleFactory = {
+    details: document.querySelector('#details'),
 
-{
-    const personInfo = document.querySelector('#personForm')
-    const resetButton = document.querySelector('#resetForm')
+    personInfo: document.querySelector('#personForm'),
 
-    document.querySelector('p#welcome').innerHTML = 'Welcome!'
-    document.querySelector('p#welcome').style.fontSize = 'xx-large'
+    resetButton: document.querySelector('#resetForm'),
 
-    const details = document.querySelector('#details')
+    init: function () {
+        this.personInfo.addEventListener('submit', this.handleSubmit)
+        this.resetButton.addEventListener('reset', this.handleReset)
 
-    function handleSubmit(ev) {
+        document.querySelector('p#welcome').innerHTML = 'Welcome!'
+        document.querySelector('p#welcome').style.fontSize = 'xx-large'
+    },
+
+    renderColor: function (color) {
+        const colorDiv = document.createElement('div')
+        colorDiv.style.backgroundColor = color
+        colorDiv.style.width = '100px'
+        colorDiv.style.height = '50px'
+        return colorDiv
+    },
+    renderListData: function (fieldName, value) {
+        const li = document.createElement('li')
+        li.innerHTML = `${fieldName}: ${value}`
+        return li
+    },
+    renderList: function (personData) {
+        const list = document.createElement('ul')
+        Object.keys(personData).map(function (fieldName) {
+            const li = PeopleFactory.renderListData(fieldName, personData[fieldName])
+            list.appendChild(li)
+        })
+        return list
+    },
+    handleSubmit: function (ev) {
         ev.preventDefault()
 
         const f = ev.target
@@ -28,10 +53,10 @@
             school: school,
             number: number,
             color: color,
-            colorDiv: renderColor(color).outerHTML,
+            colorDiv: PeopleFactory.renderColor(color).outerHTML,
         }
 
-        details.appendChild(renderList(person))
+        PeopleFactory.details.appendChild(PeopleFactory.renderList(person))
 
         if (age < 0) {
             document.querySelector('p#welcome').innerHTML = 'You cannot enter a negative age!!!!!!!!'
@@ -50,46 +75,21 @@
         // const em = document.createElement('em')
         // em.textContent = name
         // details.appendChild(em)
-    }
-
-    function handleReset(ev) {
+    },
+    handleReset: function (ev) {
         ev.preventDefault()
 
         document.querySelector('#personForm').reset()
         document.querySelector('#resetForm').reset()
 
-        //details.reset()
+        //PeopleFactory.details.reset()
 
         document.body.style.backgroundColor = 'white'
         document.querySelector('p#welcome').style.color = 'black'
         document.querySelector('p#welcome').innerHTML = 'Welcome!'
         document.querySelector('p#valid').style.color = 'black'
         document.querySelector('h1').innerHTML = 'A Factory of People'
-    }
-
-    function renderList(personData) {
-        const list = document.createElement('ul')
-        Object.keys(personData).map(function (fieldName) {
-            const li = renderListData(fieldName, personData[fieldName])
-            list.appendChild(li)
-        })
-        return list
-    }
-
-    function renderColor(color) {
-        const colorDiv = document.createElement('div')
-        colorDiv.style.backgroundColor = color
-        colorDiv.style.width = '100px'
-        colorDiv.style.height = '50px'
-        return colorDiv
-    }
-
-    function renderListData(fieldName, value) {
-        const li = document.createElement('li')
-        li.innerHTML = `${fieldName}: ${value}`
-        return li
-    }
-
-    personInfo.addEventListener('submit', handleSubmit)
-    resetButton.addEventListener('reset', handleReset)
+    },
 }
+
+PeopleFactory.init()
