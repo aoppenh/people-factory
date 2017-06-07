@@ -1,4 +1,4 @@
-(function() {
+{
     const personInfo = document.querySelector('#personForm')
     const resetButton = document.querySelector('#resetForm')
 
@@ -91,6 +91,4 @@
 
     personInfo.addEventListener('submit', handleSubmit)
     resetButton.addEventListener('reset', handleReset)
-})()
-
-//IIFE
+}
